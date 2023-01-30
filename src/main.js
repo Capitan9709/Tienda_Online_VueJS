@@ -12,6 +12,7 @@ import login from './components/login.vue'
 import registro from './components/registro.vue'
 import carrito from './components/carrito.vue'
 import administrar from './components/administrar.vue'
+import productoUnico from './components/productoUnico.vue'
 
 import App from './App.vue'
 
@@ -53,7 +54,11 @@ const routes = [
     {
         path: '/administrar',
         component: administrar
-    }
+    },
+    {
+        path: '/producto/:id?',
+        component: productoUnico
+    },
 ]
 
 
@@ -72,3 +77,4 @@ const router = createRouter({
 });
 
 createApp(App).use(router).mount('#app')
+export default router

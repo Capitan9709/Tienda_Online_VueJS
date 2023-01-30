@@ -7,7 +7,13 @@
     import pie from './pie.vue'
 
     const db = useFirestore();
-    const listaProductos = useCollection(collection(db, 'productosMujer'));
+    const productos = useCollection(collection(db, 'productos'));
+
+    function filtrarProductos(productos){
+        return productos.filter((producto) => 
+            producto.categoria == "mujer"
+        )
+    }
 
 </script>
 <template>
@@ -26,7 +32,7 @@
                     <button id="btn-filter">Filtrar</button>
                 </div>
                 <div id="contenido-productos">
-                    <producto v-for="product in listaProductos" :producto="product"></producto>
+                    <producto v-for="product in filtrarProductos(productos)" :producto="product"></producto>
                 </div>
         </section>
     </main>
