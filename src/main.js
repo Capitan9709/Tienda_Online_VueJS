@@ -17,6 +17,7 @@ import productoUnico from './components/productoUnico.vue'
 import App from './App.vue'
 
 import './assets/style.css'
+import './registerServiceWorker'
 
 const routes = [
     {
